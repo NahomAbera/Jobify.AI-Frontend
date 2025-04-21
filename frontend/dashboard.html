@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobify.AI – Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <nav class="flex items-center justify-between px-6 py-4 bg-gray-800 shadow">
+      <a href="dashboard.html" class="text-2xl font-bold">Jobify.AI</a>
+      <div class="flex gap-6 text-sm">
+        <a href="dashboard.html" class="navlink">Dashboard</a>
+        <a href="applications.html" class="navlink">Applications</a>
+        <a href="interviews.html" class="navlink">Interviews</a>
+        <a href="offers.html" class="navlink">Offers</a>
+        <a href="rejections.html" class="navlink">Rejections</a>
+      </div>
+      <button id="logoutBtn" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-sm">Logout</button>
+    </nav>
+
+    <main class="flex-1 max-w-6xl w-full mx-auto p-6 fade-in">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-center card-hover">
+          <span id="countApplications" class="text-4xl font-bold">--</span>
+          <p class="mt-2 text-gray-400">Applications</p>
+        </div>
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-center card-hover">
+          <span id="countInterviews" class="text-4xl font-bold">--</span>
+          <p class="mt-2 text-gray-400">Interviews</p>
+        </div>
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-center card-hover">
+          <span id="countOffers" class="text-4xl font-bold">--</span>
+          <p class="mt-2 text-gray-400">Offers</p>
+        </div>
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-center card-hover">
+          <span id="countRejections" class="text-4xl font-bold">--</span>
+          <p class="mt-2 text-gray-400">Rejections</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+        <canvas id="statusChart" height="120"></canvas>
+      </div>
+    </main>
+
+ 
+    <script type="module" src="js/dashboard.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>

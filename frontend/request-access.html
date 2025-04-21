@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Access – Jobify.AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+  <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-lg">
+    <h1 class="text-2xl font-semibold mb-6 text-center">Request Access</h1>
+    <form id="accessForm" class="flex flex-col gap-4">
+      <input required name="name" placeholder="Full Name" class="bg-gray-700 rounded px-4 py-2" />
+      <input required type="email" name="email" placeholder="Email Address" class="bg-gray-700 rounded px-4 py-2" />
+
+      <label class="flex items-center gap-2">Are you a student?
+        <select name="student" class="bg-gray-700 rounded px-2 py-1">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </label>
+
+      <input required name="jobTitle" placeholder="Job Title" class="bg-gray-700 rounded px-4 py-2" />
+
+      <select required name="industry" class="bg-gray-700 rounded px-4 py-2 overflow-y-auto" size="4">
+        <option value="Technology">Technology</option>
+        <option value="Finance">Finance</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Education">Education</option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Retail">Retail</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <input name="school" placeholder="School Attended (optional)" class="bg-gray-700 rounded px-4 py-2" />
+
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 rounded px-4 py-2">Submit</button>
+    </form>
+  </div>
+
+  <script type="module" src="js/requestAccess.js"></script>
+</body>
+</html>

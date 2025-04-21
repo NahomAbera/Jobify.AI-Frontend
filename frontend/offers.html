@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offers – Jobify.AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <nav class="flex items-center justify-between px-6 py-4 bg-gray-800 shadow">
+      <a href="dashboard.html" class="text-2xl font-bold">Jobify.AI</a>
+      <div class="flex gap-6 text-sm">
+        <a href="dashboard.html" class="navlink">Dashboard</a>
+        <a href="applications.html" class="navlink">Applications</a>
+        <a href="interviews.html" class="navlink">Interviews</a>
+        <a href="offers.html" class="navlink underline">Offers</a>
+        <a href="rejections.html" class="navlink">Rejections</a>
+        <button id="logoutBtn" class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded">Logout</button>
+      </div>
+    </nav>
+
+    <main class="flex-1 max-w-6xl w-full mx-auto p-6 fade-in">
+      <h1 class="text-2xl mb-4">Offers</h1>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap gap-4 mb-4 items-center text-sm">
+        <label class="flex items-center gap-2">
+          Show
+          <select id="limitSelect" class="bg-gray-800 px-2 py-1 rounded">
+            <option value="100">100</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+            <option value="5000">5000</option>
+          </select>
+          records
+        </label>
+
+        <label class="flex items-center gap-2">
+          Over
+          <select id="timeSelect" class="bg-gray-800 px-2 py-1 rounded">
+            <option value="1">Past 1 day</option>
+            <option value="5">Past 5 days</option>
+            <option value="30" selected>Past 30 days</option>
+            <option value="90">Past 3 months</option>
+            <option value="180">Past 6 months</option>
+            <option value="365">Past 1 year</option>
+            <option value="730">Past 2 years</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto bg-gray-800 rounded-lg shadow-lg">
+        <table class="min-w-full text-sm">
+          <thead>
+            <tr class="bg-gray-700 text-left">
+              <th class="px-4 py-2">Company</th>
+              <th class="px-4 py-2">Role</th>
+              <th class="px-4 py-2">Location</th>
+              <th class="px-4 py-2">Date</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Chart -->
+      <div class="bg-gray-800 rounded-lg shadow-lg p-4 mt-6">
+        <canvas id="progressChart" height="140"></canvas>
+      </div>
+    </main>
+
+    <script type="module">
+      import { initListPage } from './js/listPage.js';
+      initListPage({
+        table: 'offers',
+        dateField: 'offer_date',
+        columns: [
+          { label: 'Company', field: 'company_name' },
+          { label: 'Role', field: 'role' },
+          { label: 'Location', field: 'location' },
+          { label: 'Date', field: 'offer_date' },
+        ],
+      });
+    </script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>
