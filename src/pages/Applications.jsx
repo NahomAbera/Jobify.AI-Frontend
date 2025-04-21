@@ -6,7 +6,7 @@ import { Select } from 'flowbite-react';
 
 export default function Applications() {
   const [dates, setDates] = useState([]);
-  const [rangeMs, setRangeMs] = useState(30 * 86400000); // default 30 days
+  const [rangeMs, setRangeMs] = useState(30 * 86400000); 
   const [bucket, setBucket] = useState('auto');
 
   const ranges = [
