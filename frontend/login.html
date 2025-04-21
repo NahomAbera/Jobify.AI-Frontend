@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobify.AI – Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #e8e8e9 0%, #00050d 100%);
+    }
+    .login-box {
+      background: rgba(17, 24, 39, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')] bg-cover bg-center">
+  <div class="absolute inset-0 bg-black/50"></div>
+  
+  <div class="login-box w-full max-w-sm p-8 rounded-xl relative z-10">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold">Jobify<span class="text-white">.AI</span></h1>
+    </div>
+
+    <form id="loginForm" class="space-y-6">
+      <div>
+        <input type="email" id="email" name="email" 
+          class="w-full bg-gray-800/50 text-white px-4 py-3 rounded-lg border border-gray-700 focus:border-white focus:ring-1 focus:ring-white" 
+          placeholder="Email" required />
+      </div>
+      
+      <div>
+        <input type="password" id="password" name="password" 
+          class="w-full bg-gray-800/50 text-white px-4 py-3 rounded-lg border border-gray-700 focus:border-white focus:ring-1 focus:ring-white" 
+          placeholder="Password" required />
+      </div>
+
+      <button type="submit" class="w-full gradient-bg text-white py-3 rounded-lg font-medium hover:opacity-90">
+        Sign In
+      </button>
+    </form>
+
+    <div class="mt-6 text-center">
+      <a href="request-access.html" class="text-sm text-gray-300 hover:text-white">Need access?</a>
+    </div>
+  </div>
+
+  <script type="module" src="js/login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+</body>
+</html>
